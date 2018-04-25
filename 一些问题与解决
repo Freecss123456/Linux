@@ -8,3 +8,20 @@
   重新设置下文件格式:set ff=unix  
   保存退出:wq  
 问题解决~
+
+(二)
+#树莓派下 sudo apt-get install python-vlc报错：
+E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)
+E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?
+解决：
+  原因:可能是有另外一个程序正在运行，导致资源被锁不可用。而导致资源被锁的原因，可能是上次安装时没正常完成，而导致出现此状况。
+  输入以下命令尝试解决：
+  sudo rm /var/cache/apt/archives/lock
+  sudo rm /var/lib/dpkg/lock
+  报新错误：
+  E: dpkg was interrupted,you must manually run 'sudo dpkg --configure -a' to correct the problem
+  原因:更新时输入了错误的连接，通过以下命令删除终端中 /var/lib/dpkg/updates 目录下的文件。
+  输入以下命令尝试解决：
+  cd /var/lib/dpkg/updates 
+  sudo rm *
+问题解决~
