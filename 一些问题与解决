@@ -26,8 +26,17 @@ E: Unable to lock the administration directory (/var/lib/dpkg/), is another proc
   sudo rm *
 问题解决~
 
-
 (三)
+#树莓派错误“No space left on device”
+解决：
+  原因：这个错误是指存储空间不足。首先，通过df -h存储空间是否耗尽，其次检查sd卡扩展空间是否放开
+  一、进入树莓派配置 sudo raspi-config
+  二、选择sd卡扩展 Expand Filesystem
+  三、扩展成功后，重启 
+  四、再次检查系统空间 df -h
+问题解决~
+
+(四)
 #由于使用腾讯管家禁用了VM的相关启动项后无法读取U盘和联网
 
 解决：
