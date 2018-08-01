@@ -25,3 +25,13 @@ E: Unable to lock the administration directory (/var/lib/dpkg/), is another proc
   cd /var/lib/dpkg/updates 
   sudo rm *
 问题解决~
+
+
+(三)
+#由于使用腾讯管家禁用了VM的相关启动项后无法读取U盘和联网
+
+解决：
+  1、首先在【主机】中按Win+R打开“运行”对话框，输入“services.msc”,打开服务管...
+  2、在“服务”中启动“VMware USB Arbitration Service”服务项； ...
+  3、然后启动虚拟机，插入u盘，看到右下角usb的图标亮就能正常使用了。 ...
+问题解决~
